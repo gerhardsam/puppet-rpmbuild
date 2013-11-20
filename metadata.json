@@ -1,0 +1,18 @@
+{
+  "name": "dgutierrez1287-rpmbuild",
+  "version": "0.1.0",
+  "summary": "puppet module for rpmbuild configuration",
+  "author": "Diego Gutierrez",
+  "description": "Module to install and configure an rpmbuild environment",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": "\u003e\u003d 4.1.0"
+    }
+  ],
+  "types": [],
+  "checksums": {},
+  "source": "https://github.com/dgutierrez1287/puppet-rpmbuild.git",
+  "project_page": "https://github.com/dgutierrez1287/puppet-rpmbuild",
+  "license": ""
+}
