@@ -56,7 +56,6 @@ define rpmbuild::env::userhome (
     owner   => $username,
     group   => $username,
     mode    => 0644,
-    require => File ["/home/${username}"],
   }
   
   if $usedefaultmacros == 'yes' {

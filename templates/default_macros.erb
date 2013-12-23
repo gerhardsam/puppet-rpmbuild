@@ -3,8 +3,6 @@
 
 %_topdir		%(echo $HOME)/rpmbuild
 %packager		<%= @userfirstname %> <%= @userlastname %> <<%= @emailaddress %>>
-<% if @companyname != ' ' %>%vendor	<%= @companyname %>
-<% else %>%vendor	<%= @userfirstname %> <%= @userlastname %>
-<% end %>
+<% if @companyname != ' ' %>%vendor	                <%= @companyname %> <% else %>%vendor	                <%= @userfirstname %> <%= @userlastname %> <% end %>
 %_tmppath		%(echo $HOME)/rpmbuild/tmp
 %debug_package		%{nil}
