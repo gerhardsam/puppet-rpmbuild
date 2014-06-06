@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe 'rpmbuild', :type => :class do 
   
-  describe 'with no parameters' do
-    it { should include_class("rpmbuild::params") }
-    it { should include_class("rpmbuild") }
-  end
+  #describe 'with no parameters' do
+   # it { should include_class("rpmbuild::params") }
+    #it { should include_class("rpmbuild") }
+  #end
   
   context "with default packages" do 
     
