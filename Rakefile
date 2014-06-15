@@ -10,6 +10,7 @@ RSpec::Core::RakeTask.new(:test) do |t|
   t.pattern = 'spec/*/*_spec.rb'
 end
 
+
 PuppetLint.configuration.ignore_paths = ["pkg/**/*.pp", "spec/**/*.pp"]
 PuppetLint.configuration.send("disable_80chars")
 PuppetLint.configuration.send('disable_class_inherits_from_params_class')
