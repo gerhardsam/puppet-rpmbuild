@@ -35,13 +35,9 @@ class rpmbuild (
   if $::operatingsystem == 'Fedora' {
 
     # install fedora-packager to the latest version
-    package { 'fedora-packager':
-      ensure => latest,
-    }
+    ensure_packages('fedora-packager', {'ensure' => 'latest'})
 
     # install rpm-sign to the latest version
-    package { 'rpm-sign':
-      ensure => latest,
-    }
+    ensure_packages('rpm-sign', {'ensure' => 'latest'})
   }
 }
