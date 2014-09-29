@@ -24,12 +24,7 @@
 		<link>
 			<name>modules</name>
 			<type>2</type>
-			<location>/home/diego/workspace-geppetto/modules</location>
-		</link>
-		<link>
-			<name>spec/fixtures/modules/stdlib</name>
-			<type>2</type>
-			<location>/home/diego/workspace-geppetto/modules/puppetlabs-stdlib-4.1.0</location>
+			<location>/home/diego/Dropbox/workspace-geppetto/modules</location>
 		</link>
 	</linkedResources>
 </projectDescription>
