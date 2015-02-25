@@ -15,14 +15,14 @@
 # macrofilepath - the path to a custom .rpmmacros file
 #
 define rpmbuild::env::userhome (
-    $username = $title,
-    $usedefaultmacros = 'yes',
-    $userfirstname = '',
-    $userlastname = '',
-    $companyname = '',
-    $emailaddress = '',
-    $macrofilepath = '',
-){
+  $username = $title,
+  $usedefaultmacros = 'yes',
+  $userfirstname = '',
+  $userlastname = '',
+  $companyname = '',
+  $emailaddress = '',
+  $macrofilepath = '',
+) {
 
   # validate the username which is needed for
   # both cases
@@ -58,14 +58,14 @@ define rpmbuild::env::userhome (
   }
 
   if $usedefaultmacros == 'yes' {
-    notify{'using the default rpmmacros template': }
+    notify{ 'using the default rpmmacros template': }
 
     # validate needed parameters
     validate_string($userfirstname)
     validate_string($userlastname)
     validate_string($emailaddress)
 
-  # error check for needed parameters
+    # error check for needed parameters
     if size($userfirstname) == 0 {
       fail('ERROR: userfirstname field cant be empty')
     }
@@ -76,7 +76,7 @@ define rpmbuild::env::userhome (
       fail('ERROR: email address field cant be empty')
     }
 
-  # install the default rpmmacros via the template
+    # install the default rpmmacros via the template
     file { "/home/${username}/.rpmmacros":
       ensure  => 'present',
       owner   => $username,
@@ -87,7 +87,7 @@ define rpmbuild::env::userhome (
   }
 
   else {
-    notify{'using the custom rpmmacros file': }
+    notify{ 'using the custom rpmmacros file': }
 
     if size($macrofilepath) == 0 {
       fail('ERROR: when using custom macro file macrofilepath cannot be empty')

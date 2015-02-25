@@ -17,18 +17,18 @@
 class rpmbuild (
   $rpmbuild_packages = $rpmbuild::params::rpmbuild_packages,
   $optional_packages = $rpmbuild::params::optional_packages,
-  ) inherits rpmbuild::params {
+) inherits rpmbuild::params {
 
   # validate params
   validate_array($rpmbuild_packages)
   validate_array($optional_packages)
 
   # install the packages
-  ensure_packages($rpmbuild_packages, {'ensure' => 'latest'})
+  ensure_packages($rpmbuild_packages, { 'ensure' => 'latest' })
 
   # if there are optional packages provided install them to the latest version
   if ! empty($optional_packages) {
-    ensure_packages($optional_packages, {'ensure' => 'latest'})
+    ensure_packages($optional_packages, { 'ensure' => 'latest' })
   }
 
   # if the operating system is fedora install the extra packages
@@ -38,6 +38,6 @@ class rpmbuild (
     ensure_packages('fedora-packager', {'ensure' => 'latest'})
 
     # install rpm-sign to the latest version
-    ensure_packages('rpm-sign', {'ensure' => 'latest'})
+    ensure_packages('rpm-sign', { 'ensure' => 'latest' })
   }
 }
