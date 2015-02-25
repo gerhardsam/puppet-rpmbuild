@@ -16,7 +16,7 @@
 #
 define rpmbuild::env::userhome (
   $username = $title,
-  $usedefaultmacros = 'yes',
+  $usedefaultmacros = true,
   $userfirstname = '',
   $userlastname = '',
   $companyname = '',
@@ -33,10 +33,7 @@ define rpmbuild::env::userhome (
     fail('ERROR: username field cant be empty')
   }
 
-  # make sure usedefaultmacros variable is yes or no
-  if ! ($usedefaultmacros in [ 'yes', 'no' ]) {
-    fail('ERROR: usedefualtmacros parameter must be yes or no')
-  }
+  validate_bool($usedefaultmacros)
 
   # array to create the rpmbuild dirs
   $rpm_dirs = [
@@ -57,7 +54,7 @@ define rpmbuild::env::userhome (
     mode    => '0644',
   }
 
-  if $usedefaultmacros == 'yes' {
+  if $usedefaultmacros {
     notify{ 'using the default rpmmacros template': }
 
     # validate needed parameters
