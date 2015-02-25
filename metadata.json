@@ -5,11 +5,7 @@
   "author": "Diego Gutierrez",
   "description": "Module to install and configure an rpmbuild environment",
   "dependencies": [
-    {"version_requirement":">= 4.2.0","name":"puppetlabs-stdlib"},
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": "\u003e\u003d 4.1.0"
-    }
+    {"name":"puppetlabs/stdlib","version_requirement":">=4.2.0"}
   ],
   "types": [],
   "checksums": {},
