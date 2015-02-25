@@ -8,7 +8,6 @@
     {"name":"puppetlabs/stdlib","version_requirement":">=4.2.0"}
   ],
   "types": [],
-  "checksums": {},
   "source": "https://github.com/dgutierrez1287/puppet-rpmbuild.git",
   "project_page": "https://github.com/dgutierrez1287/puppet-rpmbuild",
   "license": "GPL"
