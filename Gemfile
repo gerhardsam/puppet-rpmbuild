@@ -1,7 +1,7 @@
 # Install via
 # bundle install --path vendor/gems
 #
-source :rubygems
+source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
 rspecversion = ENV.key?('RSPEC_VERSION') ? "= #{ENV['RSPEC_VERSION']}" : ['>= 2.9 ', '< 3.0.0']
 
