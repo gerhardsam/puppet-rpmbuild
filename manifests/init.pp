@@ -24,11 +24,11 @@ class rpmbuild (
   validate_array($optional_packages)
 
   # install the packages
-  ensure_packages($rpmbuild_packages, { 'ensure' => 'latest' })
+  ensure_packages($rpmbuild_packages)
 
-  # if there are optional packages provided install them to the latest version
+  # if there are optional packages provided install them
   if ! empty($optional_packages) {
-    ensure_packages($optional_packages, { 'ensure' => 'latest' })
+    ensure_packages($optional_packages)
   }
 
   # if the operating system is fedora install the extra packages
